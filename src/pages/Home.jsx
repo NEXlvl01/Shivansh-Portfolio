@@ -387,7 +387,7 @@ export default function Home() {
       {/* Work Portfolio Section */}
       <div id="work-section" className="relative z-30 min-h-screen py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="flex justify-center items-center gap-4 mb-8">
@@ -397,7 +397,7 @@ export default function Home() {
               </Badge>
               <Separator className="w-20 bg-blue-500/30" />
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
               Featured Work
             </h2>
@@ -409,23 +409,22 @@ export default function Home() {
           {/* Work Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {workItems.map((item, index) => (
-              <Card 
+              <Card
                 key={item.id}
-                className={`group bg-black/40 border-blue-500/20 backdrop-blur-sm hover:bg-blue-950/20 hover:border-blue-400/40 transition-all duration-500 hover:scale-105 overflow-hidden ${
-                  workItemsVisible 
-                    ? 'opacity-100 translate-y-0' 
+                className={`group bg-black/40 border-blue-500/20 backdrop-blur-sm hover:bg-blue-950/20 hover:border-blue-400/40 transition-all duration-500 hover:scale-105 overflow-hidden ${workItemsVisible
+                    ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
-                }`}
-                style={{ 
+                  }`}
+                style={{
                   transitionDelay: `${index * 150}ms`
                 }}
               >
                 {/* Image Container */}
                 <div className="relative overflow-hidden cursor-pointer" onClick={() => openImageInNewTab(item.image)}>
-                  <img 
+                  <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-110 bg-gray-900/50"
                     loading="lazy"
                     onError={(e) => {
                       console.log('Image failed to load:', item.image);
@@ -434,7 +433,7 @@ export default function Home() {
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* View Icon Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-16 h-16 bg-blue-600/80 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-blue-500/80 transition-colors cursor-pointer">
@@ -447,7 +446,7 @@ export default function Home() {
 
                   {/* View Full Size Button - Bottom */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button 
+                    <Button
                       variant="secondary"
                       size="sm"
                       onClick={(e) => {
@@ -482,7 +481,7 @@ export default function Home() {
         </div>
       </div>
 
-      
+
 
       {/* Corner Decorations */}
       <div className="absolute top-8 left-8 w-8 h-8 border-l-2 border-t-2 border-blue-500/30" />
