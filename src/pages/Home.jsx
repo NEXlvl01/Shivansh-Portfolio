@@ -412,19 +412,19 @@ export default function Home() {
               <Card
                 key={item.id}
                 className={`group bg-black/40 border-blue-500/20 backdrop-blur-sm hover:bg-blue-950/20 hover:border-blue-400/40 transition-all duration-500 hover:scale-105 overflow-hidden ${workItemsVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
                   }`}
                 style={{
                   transitionDelay: `${index * 150}ms`
                 }}
               >
                 {/* Image Container */}
-                <div className="relative overflow-hidden cursor-pointer" onClick={() => openImageInNewTab(item.image)}>
+                <div className="relative overflow-hidden cursor-pointer aspect-auto" onClick={() => openImageInNewTab(item.image)}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-110 bg-gray-900/50"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 bg-gray-900/50 block"
                     loading="lazy"
                     onError={(e) => {
                       console.log('Image failed to load:', item.image);
